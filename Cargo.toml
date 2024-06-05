@@ -1,0 +1,26 @@
+[package]
+name = "file-readers"
+version = "0.1.0"
+edition = "2021"
+default-run = "default"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+
+[[bin]]
+name = "bufread"
+path = "read-bufread/src/main.rs"
+
+[[bin]]
+name = "chunks"
+path = "read-chunks/src/main.rs"
+
+[[bin]]
+name = "default"
+path = "read-default/src/main.rs"
+
+[[bin]]
+name = "threads"
+path = "read-threads/src/main.rs"
