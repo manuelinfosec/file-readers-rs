@@ -4,7 +4,6 @@ use std::io::{BufReader, Read};
 
 fn main() {
     // Collect command-line arguments into a vector of strings
-    // args() returns an iterator over the command-line arguments
     let args: Vec<String> = args().collect();
 
     // Ensure the path to the file is provided as the second argument
@@ -42,7 +41,7 @@ fn main() {
     // The range is from 0 to the number of full blocks in the file can fit in the file
     // file_length / BLOCK_SIZE calculates how manu full blocks of 2MB
     for _ in 0..=(file_length / BLOCK_SIZE) {
-        // Read a block of data from the file into the buffer
+        // Read a block of data from the `reader` BufReader into the `contents` buffer
         // The read method also returns the number of bytes read, which is added to the counter
         // If reading fails at any point, there is panic
         read_length += reader.read(&mut contents).expect("Couldn't read file.");
