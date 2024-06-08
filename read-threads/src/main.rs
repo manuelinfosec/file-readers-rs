@@ -12,8 +12,8 @@ fn main() {
     // Extracts a reference to the path string.
     let path: &String = &args.get(1).expect("File path not specified.");
 
-    // // Retrieve the metadata for the open file to get the length in `usize` bytes
-    // // If the metadata retrieval fails, program will panic
+    // Retrieve the metadata for the open file to get the length in `usize` bytes
+    // If the metadata retrieval fails, program will panic
     let file_length: usize = metadata(&path)
         .expect("Unable to query file details")
         .len()
