@@ -27,7 +27,7 @@ fn main() {
     const THREADS: usize = 10;
 
     // Determine the portion of the file each thread will handle
-    let division: usize = ((file_length / THREADS) as f64).ceil() as usize;
+    let division: usize = (file_length + THREADS - 1) / THREADS;
 
     // Use scoped threads to ensure all threads are joined before the main thread exits
     thread::scope(|scope: &thread::Scope| {
@@ -76,7 +76,7 @@ fn main() {
 
                 // Verify the entire file was read correctly by visualizing total number of bytes read from the file
                 // and the original file length
-                println!("Total bytes read: {read_length} bytes || Original file length: {file_length} bytes");
+                println!("Thread {i}: Total bytes read: {read_total} bytes || Expected: {division} bytes");
             });
         }
     });
