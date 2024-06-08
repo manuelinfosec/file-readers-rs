@@ -42,4 +42,8 @@ fn main() {
         // If reading fails at any point, there is panic
         read_length += file.read(&mut contents).expect("Couldn't read file.");
     }
+
+    // Verify the entire file was read correctly by visualizing total number of bytes read from the file
+    // and the original file length
+    println!("Total bytes read: {read_length} bytes || Original file length: {file_length} bytes");
 }
