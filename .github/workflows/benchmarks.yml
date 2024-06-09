@@ -40,13 +40,16 @@ jobs:
           override: true
 
       - name: Generate large text file
-        run: tr -dc "A-Za-z0-9" < /dev/urandom | head -c 5G > bigfile.txt
+        run: |
+          set -o pipefail
+          tr -dc "A-Za-z0-9" < /dev/urandom | head -c 5G > bigfile.txt 2>/dev/null
+          ls -lh bigfile.txt
 
       - name: Install hyperfine
         run: |
           wget https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/hyperfine-v1.18.0-aarch64-unknown-linux-gnu.tar.gz
           tar -xzvf hyperfine-v1.18.0-aarch64-unknown-linux-gnu.tar.gz
-          sudo mv hyperfine /usr/local/bin/
+          sudo mv hyperfine-v1.18.0-aarch64-unknown-linux-gnu/hyperfine /usr/local/bin/
 
       - name: Download binaries
         uses: actions/download-artifact@v3
