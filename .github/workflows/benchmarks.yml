@@ -39,17 +39,18 @@ jobs:
           toolchain: stable
           override: true
 
-      - name: Generate large text file
-        run: |
-          set -o pipefail
-          tr -dc "A-Za-z0-9" < /dev/urandom | head -c 5G > bigfile.txt 2>/dev/null || true
-          ls -lh bigfile.txt
+      # - name: Generate large text file
+      #   run: |
+      #     set -o pipefail
+      #     tr -dc "A-Za-z0-9" < /dev/urandom | head -c 5G > bigfile.txt 2>/dev/null || true
+      #     ls -lh bigfile.txt
 
       - name: Install hyperfine
         run: |
           wget https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/hyperfine-v1.18.0-aarch64-unknown-linux-gnu.tar.gz
           tar -xzvf hyperfine-v1.18.0-aarch64-unknown-linux-gnu.tar.gz
           sudo mv hyperfine-v1.18.0-aarch64-unknown-linux-gnu/hyperfine /usr/local/bin/
+          chmod +x /usr/local/bin/hyperfine
 
       - name: Download binaries
         uses: actions/download-artifact@v3
@@ -59,9 +60,9 @@ jobs:
 
       - name: Run benchmarks
         run: |
-          ls
-          hyperfine "./target/release/bufread bigfile.txt" \
-                    "./target/release/chunks bigfile.txt" \
-                    "./target/release/default bigfile.txt" \
-                    "./target/release/io-read bigfile.txt" \
-                    "./target/release/threads bigfile.txt"
+          pwd
+          hyperfine "./target/release/bufread README.md" \
+                    "./target/release/chunks README.md" \
+                    "./target/release/default README.md" \
+                    "./target/release/io-read README.md" \
+                    "./target/release/threads README.md"
