@@ -66,4 +66,4 @@ jobs:
                     "./target/release/chunks README.md" \
                     "./target/release/default README.md" \
                     "./target/release/io-read README.md" \
-                    "./target/release/threads README.md"
+                    "./target/release/threads README.md" --show-output
