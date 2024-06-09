@@ -24,7 +24,7 @@ fn main() {
     const BLOCK_SIZE: usize = 16_777_216;
 
     // Number of threads to be used for reading the file
-    const THREADS: usize = 10;
+    const THREADS: usize = 4;
 
     // Determine the portion of the file each thread will handle
     let division: usize = (file_length + THREADS - 1) / THREADS;
