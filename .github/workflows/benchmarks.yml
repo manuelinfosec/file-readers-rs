@@ -59,6 +59,7 @@ jobs:
 
       - name: Run benchmarks
         run: |
+          ls
           hyperfine "./target/release/bufread bigfile.txt" \
                     "./target/release/chunks bigfile.txt" \
                     "./target/release/default bigfile.txt" \
