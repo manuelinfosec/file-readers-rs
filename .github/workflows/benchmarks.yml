@@ -50,7 +50,7 @@ jobs:
           FILE_NAME="hyperfine-v1.18.0-i686-unknown-linux-gnu.tar.gz"
           wget https://github.com/sharkdp/hyperfine/releases/download/v1.18.0/$FILE_NAME
           tar -xzvf $FILE_NAME
-          sudo mv hyperfine-v1.18.0-aarch64-unknown-linux-gnu/hyperfine /usr/local/bin/
+          sudo mv $FILE_NAME/hyperfine /usr/local/bin/
           chmod +x /usr/local/bin/hyperfine
 
       - name: Download binaries
