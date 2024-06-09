@@ -42,7 +42,7 @@ jobs:
       - name: Generate large text file
         run: |
           set -o pipefail
-          tr -dc "A-Za-z0-9" < /dev/urandom | head -c 5G > bigfile.txt 2>/dev/null
+          tr -dc "A-Za-z0-9" < /dev/urandom | head -c 5G > bigfile.txt 2>/dev/null || true
           ls -lh bigfile.txt
 
       - name: Install hyperfine
