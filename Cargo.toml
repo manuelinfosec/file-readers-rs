@@ -1,3 +1,12 @@
+[workspace]
+members = [
+    "read-ioread",
+    "read-chunks",
+    "read-bufread",
+    "read-threads",
+    "read-default",
+]
+
 [package]
 name = "file-readers"
 version = "0.1.0"
@@ -28,11 +37,3 @@ path = "read-threads/src/main.rs"
 [[bin]]
 name = "io-read"
 path = "read-ioread/src/main.rs"
-
-workspace = { members = [
-    "read-ioread",
-    "read-chunks",
-    "read-bufread",
-    "read-threads",
-    "read-default",
-] }

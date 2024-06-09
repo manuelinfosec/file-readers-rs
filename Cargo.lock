@@ -5,3 +5,23 @@ version = 3
 [[package]]
 name = "file-readers"
 version = "0.1.0"
+
+[[package]]
+name = "read-bufread"
+version = "0.1.0"
+
+[[package]]
+name = "read-chunks"
+version = "0.1.0"
+
+[[package]]
+name = "read-default"
+version = "0.1.0"
+
+[[package]]
+name = "read-ioread"
+version = "0.1.0"
+
+[[package]]
+name = "read-threads"
+version = "0.1.0"
