@@ -75,7 +75,7 @@ fn main() {
                 }
 
                 // Verify the entire file was read correctly by visualizing total number of bytes read from the file
-                // and the original file length
+                // by each thread and the original file length
                 println!("Thread {i}: Total bytes read: {read_total} bytes || Expected: {division} bytes");
             });
         }
