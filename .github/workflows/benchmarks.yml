@@ -66,4 +66,4 @@ jobs:
                     "./target/release/chunks bigfile.txt" \
                     "./target/release/default bigfile.txt" \
                     "./target/release/io-read bigfile.txt" \
-                    "./target/release/threads bigfile.txt" --warmup
+                    "./target/release/threads bigfile.txt" --warmup 3
