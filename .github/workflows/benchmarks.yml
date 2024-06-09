@@ -61,7 +61,7 @@ jobs:
 
       - name: Run benchmarks
         run: |
-          chmod +x target/release/
+          chmod +x target/release/*
           hyperfine "./target/release/bufread README.md" \
                     "./target/release/chunks README.md" \
                     "./target/release/default README.md" \
